@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ENTER A NUMBETR:<br><br>
+    <input type="text" id="num"><br><br>
+    <button onclick="checkoddoreven()" >Even Or Odd</button><br>
+    <span id="result"></span>
+
+    <script>
+        function checkoddoreven(){
+            let input=document.getElementById("num").value;
+            let resultElement=document.getElementById("result");
+            console.log(isNaN(input));
+            //isNaN is a function which is resturns boolean ,it wil cheack the input is not a number
+
+            if(isNaN(input))
+            resultElement.innerHTML=
+        "<strong>please entere the valid number</strong>";
+          else{
+            if(input % 2=== 0)
+            resultElement.textContent=`The input number ${num} is Even`;
+        else resultElement.textContent=`The input number ${num} is Odd`;
+          }
+          document.getElementById("num").value = ""; //to clear the input
+    }
+        
+    </script>
+</body>
+</html>

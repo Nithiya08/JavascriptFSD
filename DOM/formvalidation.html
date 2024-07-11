@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="validateForm(event)">
+      <label for="name" >Enter Your NAme:</label><br>
+      <input type="text" id="name"><span id="nameErr" style="color: red;"></span><br>
+      <lable for="age">Enter Your Age</lable><br>
+    <input type="text" id="age" ><span id="ageErr" style="color: red;"></span><br>
+    <lable for="phone" >Enter Your PhoneNumber:</lable><br>
+    <input type="text" id="phone"><span id="phoneErr" style="color:red;"></span><br>
+    <lable for="password" >Create Password</lable><br>
+    <input type="text" id="password"><span id="passErr" style="color:red;"></span><br>
+    <input type="submit" value="submit">
+    
+    
+    </form>
+
+
+
+    <script>
+        function validateForm(event){// event is form submit
+        let name=document.getElementById('name').value
+        let age=document.getElementById('age').value
+        let phone=document.getElementById('phone').value
+        let password=document.getElementById('password').value
+        let namePAttern=/^[a-zA-Z]{3,10}$/
+        let agePAttern=/^[\d]{1,2}$/ //minimum length is not defined max is 2 ,\d meand  only digits  
+        let phonepattern=/^[\d]{10}$/ //length should ne exactly 10 digit
+        let passwordpattern=/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/ //refer paswordvalidation.js file to undestand
+        if(name===''){
+            document.getElementById('nameErr').textContent='please enter the name'
+            event.preventDefault()//to prevent default form submit -to avoid from referesh]
+        }
+       else  if(!namePAttern.test(name)){
+            document.getElementById('nameErr').textContent='Name should contain only alphabets (minimum=3 and max=10)'
+            event.preventDefault()
+        }
+         if(age===''){
+            document.getElementById('ageErr').textContent='pleasae enter the age'
+            event.preventDefault()
+        }
+     else if(!agePAttern.test(age)){
+        document.getElementById('ageErr').textContent='please enter the valid age'
+        event.preventDefault()
+    }
+    if(phone===''){
+            document.getElementById('phoneErr').textContent='pleasae enter the PhoneNumber'
+            event.preventDefault()
+    }
+     else if(!phonepattern.test(phone)){
+        document.getElementById('phoneErr').textContent='please enter the valid phone number'
+        event.preventDefault()
+    }
+    if(password===''){
+            document.getElementById('passErr').textContent='pleasae enter the Password'
+            event.preventDefault()
+    }
+    else if(!passwordpattern.test(password)){
+        document.getElementById('passErr').textContent=
+        'Enter ALtest one uppercase,one lowercase,one digit,one special character,and mimunum 8 char'
+        event.preventDefault()
+                                                         
+    }
+
+        }
+    </script>
+    <!-- it is check the all  condition at a time  -->
+</body>
+</html>

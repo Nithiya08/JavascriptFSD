@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="image1.jpg" id="image" onclick="changeImage()" height="140px" width="140px">
+
+    <script>
+        function changeImage(){
+            let imageElement=document.getElementById("image")
+            if(imageElement.src.includes('image1.jpg'))
+            imageElement.src='image2.jpg'
+        else
+        imageElement.src='image1.jpg'
+    console.log(imageElement.src)//console is just see the output in the console ,its  not affect the view wepage
+        }
+
+        //same conditon in ternary operator
+        /*imageElement.src.includes('image1.jpg')?
+        imageElement.src='image2.jpg'
+        :
+        imageElement.src='image1.jpg'
+    console.log(imageElement.src)*/
+    </script>
+</body>
+</html>

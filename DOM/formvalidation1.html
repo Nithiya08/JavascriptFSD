@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit=" return validateForm(event)">
+      <label for="name" >Enter Your NAme:</label><br>
+      <input type="text" id="name"><span id="nameErr" style="color: red;"></span><br>
+      <lable for="age">Enter Your Age</lable><br>
+    <input type="text" id="age" ><span id="ageErr" style="color: red;"></span><br>
+    <input type="submit" value="submit">
+    
+    
+    </form>
+
+
+
+    <script>
+        function validateForm(event){// event is form submit
+        let name=document.getElementById('name').value
+        let age=document.getElementById('age').value
+        let namePAttern=/^[a-zA-Z]{3,10}$/
+        let agePAttern=/^[\d]{1,2}$/ //minimum length is 1 and max is 2 ,\d meand  only digits  
+        if(name===''){
+            document.getElementById('nameErr').textContent='please enter the name'
+            event.preventDefault()//to prevent default form submit -to avoid from referesh]
+            return false;
+        }
+        if(!namePAttern.test(name)){
+            document.getElementById('nameErr').textContent='Name should contain only alphabets (minimum=3 and max=10)'
+            event.preventDefault()
+        }
+        if(age===''){
+            document.getElementById('ageErr').textContent='pleasae enter the age'
+            event.preventDefault()
+            return false;
+        }
+    if(!agePAttern.test(age)){
+        document.getElementById('ageErr').textContent='please enter the valid age'
+        event.preventDefault()
+    }
+
+        }
+    </script>
+    <!-- it is check the  condition one by one  -->
+</body>
+</html>

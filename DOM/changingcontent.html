@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">THis is the orginal paragraph content</p>
+    <button onclick="changeContent()">change content</button>
+
+    <script>
+        function changeContent(){
+            let paraElement=document.getElementById("para")
+            console.log(paraElement.textContent)
+            //paraElement.textContent='THE CONTENT OF TEH PARAGRAPH IS CHANGED'
+            paraElement.innerHTML='<mark>THE CONTENT OF TEH PARAGRAPH IS CHANGED</mark>'
+        }
+    </script>
+</body>
+</html>

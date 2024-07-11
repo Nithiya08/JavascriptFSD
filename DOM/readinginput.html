@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ENTER YOUR NAME:
+    <input type="text" id="name"><br>
+    <span id="msg"></span><br>
+    <button onclick="greet()">Sumbit</button>
+
+    <script>
+        function greet(){
+            let name=document.getElementById("name").value
+            let spanElement=document.getElementById("msg")
+            spanElement.textContent=`WELCOME ${name}`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p>This is a first paragrph</p>
+        <button onclick="addPara()" id="btn">Add Paragraph</button>
+    </div>
+
+    <script>
+        function addPara(){
+            //create a new element/node(p)
+            let newPara=document.createElement("p")
+            newPara.textContent='This is a new paragaph'
+
+            //get container element and add new para as a child element before the first child
+            let containerElement=document.getElementById("container")
+            //containerElement.insertBefore(newPara,containerElement.firstChild)
+
+
+            //inserting a new node before the button 
+     let buttonnode=document.getElementById("btn")
+     containerElement.insertBefore(newPara,buttonnode)
+
+        }
+    </script>
+</body>
+</html>

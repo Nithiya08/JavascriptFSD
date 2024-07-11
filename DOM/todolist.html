@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="todo"><br><br>
+    <button onclick="addToto()">Add</button>
+    <ul id="list"> </ul>
+
+    <script>
+        function addToto(){
+            let todoInput=document.getElementById('todo').value
+
+      if (todoInput==='') alert("please enter a task");
+      else{
+            //TO create a node li with textContent
+            let liElement=document.createElement("li")
+            liElement.textContent=todoInput
+
+            //TO append the li as a child node of ul
+            let ulElement=document.getElementById('list')
+            ulElement.appendChild(liElement)
+
+            document.getElementById('todo').value=''//to clear the input text field
+      }
+        }
+    </script>
+    
+</body>
+</html>
