@@ -3,9 +3,9 @@
 //promise object have one call back funciton
 //4 The call back fucntion has two parameters(resolve/reject)
 
-let value=100; //simulate if data<150, then sucess else failure
-let promiseobj=new Promise((resolve,reject)=>{
-    if(value <150) resolve(value);//data  is sucess
+let value = 100; //simulate if data<150, then sucess else failure
+let promiseobj = new Promise((resolve, reject) => {
+    if (value < 150) resolve(value);//data  is sucess
     else reject("failure");//error is "failure"
 }
 );
@@ -16,11 +16,11 @@ let promiseobj=new Promise((resolve,reject)=>{
 //err in catch cllback is the message returened by "reject" function
 
 promiseobj
-.then((data)=>console.log(data))
-.catch((err)=>console.log(err))
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err))
 
 
-//promiseobj then catch finally 
+//promiseobj then catch finally
 //then callback fuciton will get excuted ,if it is resolved
 //catach callback function will get execited ., if it is rejected
 //finally block will always executed.

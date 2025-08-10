@@ -9,3 +9,4 @@ console.log(`${name} ${city}`)
 let array=['jhon', 'jamesh' , 'smith' , 'aadam']
 let [arr1,arr2,arr3]=array //array destruting
 console.log(`${arr1} ${arr2} ${arr3}`)
+console.log(array)
